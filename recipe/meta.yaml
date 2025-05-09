@@ -1,13 +1,14 @@
 {% set name = "stereo-pipeline" %}
 
-{% set version = "3.5.1_minimal_asp" %}
+{% set version = "3.5.0_no_isis" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
-  url: https://github.com/NeoGeographyToolkit/StereoPipeline/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 3e7b335eae875782f7110f8ffb2f2557720eff4221b6a952989f2c304d130596
+  git_url: git@github.com:NeoGeographyToolkit/StereoPipeline.git
+  #url: https://github.com/NeoGeographyToolkit/StereoPipeline/archive/refs/tags/{{ version }}.tar.gz
+  #sha256: 3e7b335eae875782f7110f8ffb2f2557720eff4221b6a952989f2c304d130596
 
 build:
   number: 0
@@ -19,9 +20,10 @@ requirements:
     - make
     - c-compiler 1.8.0
     - cxx-compiler 1.8.0
+    - fortran-compiler 1.8.0
     - {{ stdlib('c') }}
-    - wget
     - git
+    - wget
 
   host:
     - libgdal
@@ -29,7 +31,8 @@ requirements:
     - flann
     - openssl
     - libssh2
-    - blas
+    - blas  # [linux]
+    - blas 2.131 accelerate  # [osx]
     - blas-devel
     - libblas
     - libcblas
@@ -54,6 +57,7 @@ requirements:
     - chrpath  # [linux]
     - libglvnd  # [linux]
     - parallel
+    - bzip2
     - pbzip2
     - krb5
     - pdal
@@ -103,7 +107,8 @@ requirements:
     - flann
     - openssl
     - libssh2
-    - blas
+    - blas  # [linux]
+    - blas 2.131 accelerate  # [osx]
     - blas-devel
     - libblas
     - libcblas
@@ -128,6 +133,7 @@ requirements:
     - chrpath  # [linux]
     - libglvnd  # [linux]
     - parallel
+    - bzip2
     - pbzip2
     - krb5
     - pdal
