@@ -11,7 +11,7 @@ source:
   #sha256: 3e7b335eae875782f7110f8ffb2f2557720eff4221b6a952989f2c304d130596
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   
 requirements:
@@ -83,8 +83,11 @@ requirements:
     - pcl 
     - python
     - python_abi
+    - qhull
     - qt-main >=5.15,<5.16
     - qwt <6.3.0
+    - suitesparse <5.11 # TheiaSfM fails with version 7
+    - superlu <5.3 # likely need not enforce this
     - tbb
     - tbb-devel
     - xerces-c >=3.2.4,<3.3.0a0
@@ -159,8 +162,11 @@ requirements:
     - pcl 
     - python
     - python_abi
+    - qhull
     - qt-main >=5.15,<5.16
     - qwt <6.3.0
+    - suitesparse <5.11
+    - superlu <5.3
     - tbb
     - tbb-devel
     - xerces-c >=3.2.4,<3.3.0a0

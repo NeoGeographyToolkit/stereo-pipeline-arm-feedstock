@@ -167,17 +167,15 @@ make -j${CPU_COUNT} install
 
 # visionworkbench
 cd $SRC_DIR
-wget https://github.com/visionworkbench/visionworkbench/archive/refs/tags/3.5.3.tar.gz > /dev/null 2>&1 # this is verbose
-tar xzf 3.5.3.tar.gz
-# Build visionworkbench
-cd $SRC_DIR
-cd visionworkbench-3.5.3
+git clone git@github.com:visionworkbench/visionworkbench.git
+cd visionworkbench
 mkdir -p build
 cd build
-cmake ..                                         \
-    -DCMAKE_PREFIX_PATH=${PREFIX}                \
-    -DCMAKE_INSTALL_PREFIX=${PREFIX}             \
-    -DASP_DEPS_DIR=${PREFIX}                     \
+cmake ..                             \
+    -DCMAKE_PREFIX_PATH=${PREFIX}    \
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+    -DASP_DEPS_DIR=${PREFIX}         \
+    -DUSE_OPENEXR=OFF                \
     -DCMAKE_VERBOSE_MAKEFILE=ON
 make -j${CPU_COUNT} install
 
