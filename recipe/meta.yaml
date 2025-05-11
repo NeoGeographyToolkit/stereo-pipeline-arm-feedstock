@@ -24,10 +24,12 @@ requirements:
     - {{ stdlib('c') }}
     - git
     - wget
+    - ninja
 
   host:
     - ale 0.10.0
     - aom
+    - bullet
     - bz2file
     - ffmpeg
     - geos >=3.12,<3.13
@@ -46,6 +48,8 @@ requirements:
     - jama
     - nn
     - libgdal
+    - gdal
+    - gmp
     - llvm-openmp
     - flann
     - openssl
@@ -106,9 +110,10 @@ requirements:
     - qt-main >=5.15,<5.16
     - qwt <6.3.0
     - suitesparse <5.11 # TheiaSfM fails with version 7
-    - superlu <5.3 # likely need not enforce this
+    - superlu
     - tbb
     - tbb-devel
+    - tnt
     - xerces-c >=3.2.4,<3.3.0a0
     - armadillo
     - vlfeat
@@ -117,6 +122,7 @@ requirements:
     - rapidjson
     - wget
     - embree >=3,<4
+    - xalan-c
     - xorg-kbproto
     - xorg-libice
     - xorg-libsm
@@ -126,6 +132,7 @@ requirements:
   run:
     - ale 0.10.0
     - aom
+    - bullet
     - bz2file
     - ffmpeg
     - geos >=3.12,<3.13
@@ -144,6 +151,8 @@ requirements:
     - jama
     - nn
     - libgdal
+    - gdal
+    - gmp
     - llvm-openmp
     - flann
     - openssl
@@ -204,9 +213,10 @@ requirements:
     - qt-main >=5.15,<5.16
     - qwt <6.3.0
     - suitesparse <5.11 # TheiaSfM fails with version 7
-    - superlu <5.3 # likely need not enforce this
+    - superlu
     - tbb
     - tbb-devel
+    - tnt
     - xerces-c >=3.2.4,<3.3.0a0
     - armadillo
     - vlfeat
@@ -215,6 +225,7 @@ requirements:
     - rapidjson
     - wget
     - embree >=3,<4
+    - xalan-c
     - xorg-kbproto
     - xorg-libice
     - xorg-libsm
